@@ -18,6 +18,10 @@ const StagePage = () => {
     "Type O Negative - I Don't Wanna Be Me"
   );
 
+  const [sliderVal, setSliderVal] = useState(30);
+
+  console.log("SLIDER VAL IN PAGE", sliderVal);
+
   // const funcArr = [
   //   () => setCurrentStage("lightNone"),
   //   () => setCurrentStage("light1"),
@@ -28,13 +32,25 @@ const StagePage = () => {
   let url;
 
   if (currentStage === "lightNone") {
-    url = "/stagetest1.png";
+    url = "/paint/Stage0.png";
   } else if (currentStage === "light1") {
-    url = "/yellowtest.jpeg";
+    url = "/paint/Stage1.png";
   } else if (currentStage === "light2") {
-    url = "/bluetest.jpeg";
+    url = "/paint/Stage2.png";
   } else {
-    url = "/greentest.jpeg";
+    url = "/paint/Stage3.png";
+  }
+
+  let imageURL;
+
+  if (sliderVal === 0) {
+    imageURL = "/paint/subwoofer0.png";
+  } else if (sliderVal < 33) {
+    imageURL = "/paint/subwoofer1.png";
+  } else if (sliderVal < 66) {
+    imageURL = "/paint/subwoofer2.png";
+  } else {
+    imageURL = "/paint/subwoofer3.png";
   }
 
   console.log("STAGE TEXT", stageText);
@@ -46,7 +62,7 @@ const StagePage = () => {
           <span className="text-green-600  flex justify-center">
             <span className={`${press.className} text-xl`}> {stageText}</span>
           </span>
-          <Frame>
+          <Frame imageURL={imageURL}>
             <ImageSection imageUrl={url} />
           </Frame>
         </div>
@@ -64,6 +80,7 @@ const StagePage = () => {
                 currentStage === "light2" || currentStage === "lightBoth"
               }
               setText={setStageText}
+              setSlider={setSliderVal}
             />
           </div>
         </div>

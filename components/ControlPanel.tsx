@@ -17,6 +17,7 @@ const ControlPanel = ({
   b1Pressed,
   b2Pressed,
   setText,
+  setSlider,
 }) => {
   console.log("B1PRESSED", b1Pressed);
   console.log("B2PRESSED", b2Pressed);
@@ -64,7 +65,7 @@ const ControlPanel = ({
         <SongInput setText={setText} />
       </div>
       <div className="">
-        <ContinuousSlider />
+        <ContinuousSlider setSlider={setSlider} />
       </div>
     </div>
   );
