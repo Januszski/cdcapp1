@@ -2,17 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const usernames = ["testUser", "testUser2", "testUser3"];
 
-const chats = [
-  "cum",
-  "in",
-  "me",
-  "daddy",
-  "mommy",
-  "hello",
-  "ok",
-  "fart",
-  "toot",
-];
+const chats = ["baz"];
 
 function getRandomInt(min: number, max: number) {
   min = Math.ceil(min);
