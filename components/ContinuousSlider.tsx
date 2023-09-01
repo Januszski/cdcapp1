@@ -18,7 +18,12 @@ export default function ContinuousSlider({ setSlider }) {
     <Box sx={{ width: 400 }}>
       <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
         <VolumeDown />
-        <Slider aria-label="Volume" value={value} onChange={handleChange} />
+        <Slider
+          color="primary"
+          aria-label="Volume"
+          value={value}
+          onChange={handleChange}
+        />
         <VolumeUp />
       </Stack>
     </Box>

@@ -10,6 +10,7 @@ import { TextField } from "@mui/material";
 import SongInput from "./SongInput";
 
 const ControlPanel = ({
+  /* @ts-ignore */
   lightNone,
   light1,
   light2,
@@ -27,7 +28,9 @@ const ControlPanel = ({
       <span className=" flex-row items-center justify-start ">
         <button
           className={`rounded-full p-3 ${
-            b1Pressed ? "bg-blue-500 text-white" : "bg-gray-300 text-gray-700"
+            b1Pressed
+              ? "bg-yellow-400 text-white"
+              : "bg-yellow-200 text-gray-700"
           }`}
           onClick={
             b1Pressed
@@ -46,7 +49,7 @@ const ControlPanel = ({
       <span className="">
         <button
           className={`rounded-full p-3 ${
-            b2Pressed ? "bg-blue-500 text-white" : "bg-gray-300 text-gray-700"
+            b2Pressed ? "bg-red-600 text-white" : "bg-red-400 text-gray-700"
           }`}
           onClick={
             b2Pressed

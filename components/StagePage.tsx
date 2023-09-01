@@ -5,6 +5,12 @@ import ImageSection from "./ImageSection";
 import Frame from "./Frame";
 import ControlPanel from "./ControlPanel";
 import { Press_Start_2P } from "next/font/google";
+import { Bebas_Neue } from "next/font/google";
+
+const bebas = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 const press = Press_Start_2P({
   subsets: ["latin"],
@@ -57,32 +63,33 @@ const StagePage = () => {
 
   return (
     <>
-      <div className="">
-        <div className="ambient-background h-3/4 ">
-          <span className="text-green-600  flex justify-center">
-            <span className={`${press.className} text-xl`}> {stageText}</span>
-          </span>
-          <Frame imageURL={imageURL}>
+      <div className="ambient-background h-screen">
+        <Frame imageURL={imageURL}>
+          <div className="flex flex-col">
+            <span className="text-green-600  flex justify-center flex-end">
+              <span className={`${press.className} text-xl`}> {stageText}</span>
+            </span>
+
             <ImageSection imageUrl={url} />
-          </Frame>
-        </div>
-        <div className="flex ambient-background-light justify-between items-center">
-          <div className="flex-grow ">
-            <ControlPanel
-              lightNone={() => setCurrentStage("lightNone")}
-              light1={() => setCurrentStage("light1")}
-              light2={() => setCurrentStage("light2")}
-              lightBoth={() => setCurrentStage("lightBoth")}
-              b1Pressed={
-                currentStage === "light1" || currentStage === "lightBoth"
-              }
-              b2Pressed={
-                currentStage === "light2" || currentStage === "lightBoth"
-              }
-              setText={setStageText}
-              setSlider={setSliderVal}
-            />
           </div>
+        </Frame>
+
+        <div className="flex flex-col flex-grow ambient-background-light  justify-between items-center border-2 border-green-600">
+          <div className={`${bebas.className} text-xl`}> Control Panel</div>
+          <ControlPanel
+            lightNone={() => setCurrentStage("lightNone")}
+            light1={() => setCurrentStage("light1")}
+            light2={() => setCurrentStage("light2")}
+            lightBoth={() => setCurrentStage("lightBoth")}
+            b1Pressed={
+              currentStage === "light1" || currentStage === "lightBoth"
+            }
+            b2Pressed={
+              currentStage === "light2" || currentStage === "lightBoth"
+            }
+            setText={setStageText}
+            setSlider={setSliderVal}
+          />
         </div>
       </div>
     </>
