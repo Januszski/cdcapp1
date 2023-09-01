@@ -45,7 +45,7 @@ const SongInput = ({ setText }) => {
         </FormControl>
       </Box>
       <Button variant="text" onClick={handleClick}>
-        Send
+        Apply
       </Button>
     </>
   );

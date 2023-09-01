@@ -20,9 +20,7 @@ const press = Press_Start_2P({
 const StagePage = () => {
   const [currentStage, setCurrentStage] = useState("lightNone");
   console.log("STATE", currentStage);
-  const [stageText, setStageText] = useState(
-    "Type O Negative - I Don't Wanna Be Me"
-  );
+  const [stageText, setStageText] = useState("Wolf Moon - Type O Negative");
 
   const [sliderVal, setSliderVal] = useState(30);
 
