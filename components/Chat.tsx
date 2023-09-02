@@ -55,7 +55,7 @@ function ChatTest() {
 
   useEffect(() => {
     if (!buttonPressed) {
-      scrollRef.current?.scrollIntoView();
+      scrollRef.current?.scrollIntoView({ block: "end" });
     }
   }, [chats]);
 
@@ -73,7 +73,7 @@ function ChatTest() {
           display: "flex",
           flexDirection: "column",
         }}
-        className="border-2 border-green-600"
+        className="border-2 border-green-600 ambient-background-light"
       >
         {chats.map((chat, index) => (
           <span key={index}>
@@ -87,22 +87,27 @@ function ChatTest() {
         ))}
         <div ref={scrollRef}></div>
       </div>
-      <SongInput
-        setText={setUserText}
-        buttonName={"Send"}
-        desc={"Send a chat message"}
-      />
-      <button
-        className={`rounded-full p-3 ${
-          buttonPressed
-            ? "bg-green-600 text-white"
-            : "bg-green-300 text-gray-700"
-        }`}
-        onClick={onPress}
+      <div
+        className="border-2 border-green-600 ambient-background-light"
+        style={{ width: 300, borderTop: 0 }}
       >
-        {" "}
-        Autoscroll Off{" "}
-      </button>
+        <SongInput
+          setText={setUserText}
+          buttonName={"Send"}
+          desc={"Send a chat message"}
+        />
+        <button
+          className={`rounded-full p-3 ${
+            buttonPressed
+              ? "bg-green-600 text-white"
+              : "bg-green-300 text-gray-700"
+          }`}
+          onClick={onPress}
+        >
+          {" "}
+          Autoscroll Off{" "}
+        </button>
+      </div>
     </>
   );
 }

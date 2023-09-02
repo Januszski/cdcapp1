@@ -10,7 +10,6 @@ import { TextField } from "@mui/material";
 import SongInput from "./SongInput";
 
 const ControlPanel = ({
-  /* @ts-ignore */
   lightNone,
   light1,
   light2,
@@ -19,10 +18,10 @@ const ControlPanel = ({
   b2Pressed,
   setText,
   setSlider,
+  setStrobe,
+  b3Pressed,
+  isDisabled,
 }) => {
-  console.log("B1PRESSED", b1Pressed);
-  console.log("B2PRESSED", b2Pressed);
-
   return (
     <div className="flex  h-max justify-between flex-wrap items-center">
       <span className=" flex-row items-center justify-start ">
@@ -41,6 +40,7 @@ const ControlPanel = ({
               ? lightBoth
               : light1
           }
+          disabled={isDisabled}
         >
           LIGHTS 1
         </button>
@@ -60,10 +60,19 @@ const ControlPanel = ({
               ? lightBoth
               : light2
           }
+          disabled={isDisabled}
         >
           LIGHTS 2
         </button>
       </span>
+      <button
+        className={`rounded-full p-3 ${
+          b3Pressed ? "bg-purple-600 text-white" : "bg-purple-400 text-gray-700"
+        }`}
+        onClick={b3Pressed ? lightNone : setStrobe}
+      >
+        STROBE
+      </button>
       <div className="">
         <SongInput
           setText={setText}

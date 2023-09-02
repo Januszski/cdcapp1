@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ImageSection from "./ImageSection";
 import Frame from "./Frame";
 import ControlPanel from "./ControlPanel";
@@ -19,18 +19,26 @@ const press = Press_Start_2P({
 
 const StagePage = () => {
   const [currentStage, setCurrentStage] = useState("lightNone");
-  console.log("STATE", currentStage);
   const [stageText, setStageText] = useState("Wolf Moon - Type O Negative");
+  const [disabled, setDisabled] = useState(false);
 
   const [sliderVal, setSliderVal] = useState(30);
-
-  console.log("SLIDER VAL IN PAGE", sliderVal);
 
   // const funcArr = [
   //   () => setCurrentStage("lightNone"),
   //   () => setCurrentStage("light1"),
   //   () => setCurrentStage("light2"),
   //   () => setCurrentStage("lightBoth"),
+
+  const strobePressed = () => {
+    setCurrentStage("light4");
+    setDisabled(true);
+  };
+
+  const lightNone = () => {
+    setCurrentStage("lightNone");
+    setDisabled(false);
+  };
   // ];
 
   let url;
@@ -41,8 +49,10 @@ const StagePage = () => {
     url = "/paint/Stage1.png";
   } else if (currentStage === "light2") {
     url = "/paint/Stage2.png";
-  } else {
+  } else if (currentStage === "lightBoth") {
     url = "/paint/Stage3.png";
+  } else {
+    url = "/ezgif.com-gif-maker.gif";
   }
 
   let imageURL;
@@ -57,7 +67,8 @@ const StagePage = () => {
     imageURL = "/paint/subwoofer3.png";
   }
 
-  console.log("STAGE TEXT", stageText);
+  //length of . is 1, length of - is 3, between letters is 3
+  // .-..    ---    ---    -.-    .-    .--    .-    -.--
 
   return (
     <>
@@ -75,7 +86,7 @@ const StagePage = () => {
         <div className="flex flex-col flex-grow ambient-background-light  justify-between items-center border-2 border-green-600">
           <div className={`${bebas.className} text-xl`}> Control Panel</div>
           <ControlPanel
-            lightNone={() => setCurrentStage("lightNone")}
+            lightNone={lightNone}
             light1={() => setCurrentStage("light1")}
             light2={() => setCurrentStage("light2")}
             lightBoth={() => setCurrentStage("lightBoth")}
@@ -87,6 +98,9 @@ const StagePage = () => {
             }
             setText={setStageText}
             setSlider={setSliderVal}
+            setStrobe={strobePressed}
+            b3Pressed={currentStage === "light4"}
+            isDisabled={disabled}
           />
         </div>
       </div>
