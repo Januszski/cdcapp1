@@ -22,6 +22,7 @@ export const MonitorChat = () => {
   const addChat = (username: string, chat: string) => {
     setActiveChats((oldChats) => [...oldChats, { username, chat }]);
     console.log("CHAT ADDED");
+
     //window.scrollTo(0, document.body.scrollHeight);
   };
 
@@ -80,7 +81,14 @@ export const MonitorChat = () => {
     //     },
     //   }}
     // >
-    <div className="flex flex-col overflow-y-scroll max-h-64 scroll-auto will-change-scroll">
+    <div
+      style={{
+        overflowY: "scroll",
+        height: 100,
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       {activeChats.map((data, index) => (
         <>
           <p

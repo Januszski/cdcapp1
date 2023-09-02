@@ -65,7 +65,11 @@ const ControlPanel = ({
         </button>
       </span>
       <div className="">
-        <SongInput setText={setText} />
+        <SongInput
+          setText={setText}
+          buttonName={"Apply"}
+          desc={"Update Stage Text"}
+        />
       </div>
       <div className="">
         <ContinuousSlider setSlider={setSlider} />

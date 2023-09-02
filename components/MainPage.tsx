@@ -9,7 +9,7 @@ const MainPage = () => {
 
   return (
     <>
-      <span className="ambient-background font-inter">
+      <span className="ambient-background">
         <span className="flex flex-row items-center justify-center ambient-background ">
           <span className="flex justify-center">
             {" "}
