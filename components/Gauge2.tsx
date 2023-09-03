@@ -7,7 +7,7 @@ import HighchartsSolidGauge from "highcharts/modules/solid-gauge";
 HighchartsMore(Highcharts);
 HighchartsSolidGauge(Highcharts);
 
-const SolidGaugeChart = ({ value }) => {
+const SolidGaugeChart2 = ({ value }) => {
   const chartRef = useRef(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const SolidGaugeChart = ({ value }) => {
         backgroundColor: "transparent",
       },
       title: {
-        text: "Noise Level",
+        text: "Crowd Capacity",
         style: {
           color: "red",
           fontWeight: 700,
@@ -72,9 +72,9 @@ const SolidGaugeChart = ({ value }) => {
     };
     /* @ts-ignore */
     if (!chartRef.current) {
-      chartRef.current = Highcharts.chart("solidGaugeContainer", chartOptions);
+      chartRef.current = Highcharts.chart("2", chartOptions);
     } else {
-      chartRef.current.series[0].setData([value], true);
+      chartRef.current?.series[0].setData([value], true);
       chartRef.current.series[0].update({
         dataLabels: {
           format:
@@ -82,7 +82,7 @@ const SolidGaugeChart = ({ value }) => {
             (value < 50 ? (value === 0 ? "white" : "blue") : "red") +
             '">' +
             value +
-            '</span><br/><span style="font-size:12px;color:silver">dB</span></div>',
+            '</span><br/><span style="font-size:12px;color:silver">% Full</span></div>',
         },
       });
     }
@@ -90,7 +90,7 @@ const SolidGaugeChart = ({ value }) => {
     //Highcharts.chart("solidGaugeContainer", chartOptions);
   }, [value]);
 
-  return <div id="solidGaugeContainer"></div>;
+  return <div id="2"></div>;
 };
 
-export default SolidGaugeChart;
+export default SolidGaugeChart2;
