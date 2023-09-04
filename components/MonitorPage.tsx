@@ -4,13 +4,29 @@ import ChatTest from "./Chat";
 import Gauge from "./Gauge";
 import Gauge2 from "./Gauge2";
 
-const MonitorPage = () => {
-  const [buttonPressed, setButtonPressed] = useState(false);
-  const [gaugeVal, setGaugeVal] = useState(0);
-  const [gaugeVal2, setGaugeVal2] = useState(0);
+const MonitorPage = ({
+  buttonPressed,
+  setButtonPressed,
+  gaugeVal,
+  setGaugeVal,
+  gaugeVal2,
+  setGaugeVal2,
+  indexRef,
+  chats,
+  setChats,
+  userText,
+  setUserText,
+  buttonPressedAuto,
+  setButtonPressedAuto,
+  indexRef1,
+  scrollRef,
+}) => {
+  // const [buttonPressed, setButtonPressed] = useState(false);
+  // const [gaugeVal, setGaugeVal] = useState(0);
+  // const [gaugeVal2, setGaugeVal2] = useState(0);
 
-  //const [index, setIndex] = useState(0);
-  const indexRef = useRef(0); // Use a useRef to store the mutable index value
+  // //const [index, setIndex] = useState(0);
+  // const indexRef = useRef(0); // Use a useRef to store the mutable index value
 
   useEffect(() => {
     const gaugeArrNoise = [
@@ -19,7 +35,7 @@ const MonitorPage = () => {
       62, 33, 65, 70, 62, 45, 0, 10, 37, 54, 52, 32, 36, 40, 29, 0, 12, 31, 56,
       69, 43, 45, 49, 55, 0, 19, 55, 63, 80, 44, 47, 65, 79, 0, 37, 32, 60, 76,
       24, 39, 74, 85, 0, 11, 78, 86, 90, 100, 10, 31, 67, 0, 35, 68, 72, 85, 92,
-      99, 43, 78, 0,
+      99, 43, 78, 0, 0, 0,
     ];
 
     const gaugeArrCrowd = [
@@ -28,11 +44,10 @@ const MonitorPage = () => {
       76, 33, 6, 79, 80, 93, 0, 32, 47, 74, 89, 47, 40, 45, 60, 0, 30, 67, 70,
       78, 34, 65, 67, 80, 0, 29, 65, 70, 68, 40, 71, 75, 68, 0, 13, 20, 56, 63,
       12, 62, 32, 20, 0, 42, 38, 22, 46, 21, 32, 44, 39, 0, 37, 72, 83, 52, 39,
-      23, 22, 87, 0,
+      23, 22, 87, 0, 0, 0,
     ];
 
     const interval = setInterval(() => {
-      console.log("GAUGE", gaugeVal);
       setGaugeVal(gaugeArrNoise[indexRef.current]);
       setGaugeVal2(gaugeArrCrowd[indexRef.current]);
 
@@ -50,7 +65,16 @@ const MonitorPage = () => {
         className="ambient-background h-screen"
       >
         <div className="margin-left: 0.125rem;" style={{ flex: 1 }}>
-          <ChatTest />
+          <ChatTest
+            chats={chats}
+            setChats={setChats}
+            userText={userText}
+            setUserText={setUserText}
+            buttonPressedAuto={buttonPressedAuto}
+            setButtonPressedAuto={setButtonPressedAuto}
+            indexRef1={indexRef1}
+            scrollRef={scrollRef}
+          />
         </div>
         <div className="flex justify-self-end">
           <Gauge value={gaugeVal} />

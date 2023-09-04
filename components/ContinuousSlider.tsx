@@ -5,14 +5,14 @@ import Slider from "@mui/material/Slider";
 import VolumeDown from "@mui/icons-material/VolumeDown";
 import VolumeUp from "@mui/icons-material/VolumeUp";
 
-export default function ContinuousSlider({ setSlider }) {
-  const [value, setValue] = React.useState<number>(30);
+export default function ContinuousSlider({ setSlider, sliderVal }) {
+  // const [valueSlider, setValueSlider] = React.useState<number>(30);
 
   const handleChange = (event: Event, newValue: number | number[]) => {
-    setValue(newValue as number);
+    // setValueSlider(newValue as number);
     setSlider(newValue);
   };
-  console.log("SLIDER VALUE", value);
+  // console.log("SLIDER VALUE", valueSlider);
 
   return (
     <Box sx={{ width: 400 }}>
@@ -21,7 +21,7 @@ export default function ContinuousSlider({ setSlider }) {
         <Slider
           color="primary"
           aria-label="Volume"
-          value={value}
+          value={sliderVal}
           onChange={handleChange}
         />
         <VolumeUp />

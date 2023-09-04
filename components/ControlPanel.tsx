@@ -18,6 +18,7 @@ const ControlPanel = ({
   b2Pressed,
   setText,
   setSlider,
+  sliderVal,
   setStrobe,
   b3Pressed,
   isDisabled,
@@ -81,7 +82,7 @@ const ControlPanel = ({
         />
       </div>
       <div className="">
-        <ContinuousSlider setSlider={setSlider} />
+        <ContinuousSlider setSlider={setSlider} sliderVal={sliderVal} />
       </div>
     </div>
   );

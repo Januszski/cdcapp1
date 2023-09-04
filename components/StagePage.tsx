@@ -17,12 +17,21 @@ const press = Press_Start_2P({
   weight: "400",
 });
 
-const StagePage = () => {
-  const [currentStage, setCurrentStage] = useState("lightNone");
-  const [stageText, setStageText] = useState("Wolf Moon - Type O Negative");
-  const [disabled, setDisabled] = useState(false);
+const StagePage = ({
+  currentStage,
+  setCurrentStage,
+  stageText,
+  setStageText,
+  disabled,
+  setDisabled,
+  sliderVal,
+  setSliderVal,
+}) => {
+  //const [currentStage, setCurrentStage] = useState("lightNone");
+  // const [stageText, setStageText] = useState("Wolf Moon - Type O Negative");
+  // const [disabled, setDisabled] = useState(false);
 
-  const [sliderVal, setSliderVal] = useState(30);
+  // const [sliderVal, setSliderVal] = useState(30);
 
   // const funcArr = [
   //   () => setCurrentStage("lightNone"),
@@ -98,6 +107,7 @@ const StagePage = () => {
             }
             setText={setStageText}
             setSlider={setSliderVal}
+            sliderVal={sliderVal}
             setStrobe={strobePressed}
             b3Pressed={currentStage === "light4"}
             isDisabled={disabled}
