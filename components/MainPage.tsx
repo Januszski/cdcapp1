@@ -7,7 +7,7 @@ import MonitorPage from "./MonitorPage";
 const MainPage = () => {
   const [activeButton, setActiveButton] = useState("stage");
   const [currentStage, setCurrentStage] = useState("lightNone");
-  const [stageText, setStageText] = useState("Ise Ise Baby - Vanilla Ise");
+  const [stageText, setStageText] = useState("Vanilla Ise - Ise Ise Baby");
   const [disabled, setDisabled] = useState(false);
 
   const [sliderVal, setSliderVal] = useState(30);
@@ -28,15 +28,15 @@ const MainPage = () => {
   return (
     <>
       <span className="ambient-background">
-        <span className="flex flex-row items-center justify-center ambient-background ">
-          <span className="flex justify-center">
+        <span className="flex flex-row items-center justify-center ambient-background flex-grow">
+          <span className=" justify-center flex-grow">
             {" "}
             <StageButton
               onPress={() => setActiveButton("stage")}
               isPressed={activeButton === "stage"}
             />{" "}
           </span>
-          <span>
+          <span className="flex-grow">
             {" "}
             <MonitorButton
               onPress={() => setActiveButton("monitor")}

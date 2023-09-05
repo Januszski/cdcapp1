@@ -28,14 +28,75 @@ const MonitorPage = ({
   // //const [index, setIndex] = useState(0);
   // const indexRef = useRef(0); // Use a useRef to store the mutable index value
 
+  function getRandomInt(min: number, max: number) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+  }
+
+  function zero() {
+    return getRandomInt(1, 50);
+  }
+
+  function one() {
+    return getRandomInt(51, 101);
+  }
+
   useEffect(() => {
+    // const gaugeArrNoise = [
+    //   49, 80, 84, 45, 33, 48, 78, 87, 0, 15, 67, 73, 36, 42, 67, 47, 29, 0, 20,
+    //   55, 63, 27, 35, 42, 57, 68, 0, 14, 62, 59, 70, 75, 42, 63, 70, 0, 18, 53,
+    //   62, 33, 65, 70, 62, 45, 0, 10, 37, 54, 52, 32, 36, 40, 29, 0, 12, 31, 56,
+    //   69, 43, 45, 49, 55, 0, 19, 55, 63, 80, 44, 47, 65, 79, 0, 37, 32, 60, 76,
+    //   24, 39, 74, 85, 0, 11, 78, 86, 90, 100, 10, 31, 67, 0, 35, 68, 72, 85, 92,
+    //   99, 43, 78, 0, 0, 0,
+    // ];
+
     const gaugeArrNoise = [
-      49, 80, 84, 45, 33, 48, 78, 87, 0, 15, 67, 73, 36, 42, 67, 47, 29, 0, 20,
-      55, 63, 27, 35, 42, 57, 68, 0, 14, 62, 59, 70, 75, 42, 63, 70, 0, 18, 53,
-      62, 33, 65, 70, 62, 45, 0, 10, 37, 54, 52, 32, 36, 40, 29, 0, 12, 31, 56,
-      69, 43, 45, 49, 55, 0, 19, 55, 63, 80, 44, 47, 65, 79, 0, 37, 32, 60, 76,
-      24, 39, 74, 85, 0, 11, 78, 86, 90, 100, 10, 31, 67, 0, 35, 68, 72, 85, 92,
-      99, 43, 78, 0, 0, 0,
+      zero(),
+      one(),
+      one(),
+      zero(),
+      zero(),
+      zero(),
+      one(),
+      one(),
+      0,
+      zero(),
+      one(),
+      one(),
+      zero(),
+      zero(),
+      one(),
+      zero(),
+      zero(),
+      0,
+      zero(),
+      one(),
+      one(),
+      zero(),
+      zero(),
+      one(),
+      one(),
+      0,
+      zero(),
+      one(),
+      one(),
+      one(),
+      one(),
+      zero(),
+      one(),
+      one(),
+      0,
+      zero(),
+      one(),
+      one(),
+      zero(),
+      one(),
+      one(),
+      one(),
+      zero(),
+      0,
     ];
 
     const gaugeArrCrowd = [
@@ -52,7 +113,6 @@ const MonitorPage = ({
       setGaugeVal2(gaugeArrCrowd[indexRef.current]);
 
       indexRef.current = (indexRef.current + 1) % gaugeArrNoise.length;
-      console.log("INDEX", indexRef.current);
     }, 2000);
 
     return () => clearInterval(interval);
@@ -61,10 +121,13 @@ const MonitorPage = ({
   return (
     <>
       <div
-        style={{ display: "flex", justifyContent: "space-evenly" }}
-        className="ambient-background h-screen"
+        style={{ display: "flex" }}
+        className="ambient-background h-screen justify-between"
       >
-        <div className="margin-left: 0.125rem;" style={{ flex: 1 }}>
+        <div
+          className=" flex-grow flex-col"
+          style={{ marginLeft: "40px", marginTop: "40px" }}
+        >
           <ChatTest
             chats={chats}
             setChats={setChats}
@@ -76,7 +139,10 @@ const MonitorPage = ({
             scrollRef={scrollRef}
           />
         </div>
-        <div className="flex justify-self-end">
+        <div
+          className="flex justify-items-end  flex-wrap"
+          style={{ marginLeft: "12vw", marginTop: "40px" }}
+        >
           <Gauge value={gaugeVal} />
           <Gauge2 value={gaugeVal2} />
         </div>

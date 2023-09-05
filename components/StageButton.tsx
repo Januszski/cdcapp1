@@ -5,15 +5,13 @@ import { useState } from "react";
 
 const StageButton = ({ onPress, isPressed }) => {
   return (
-    <span className="flex flex-col items-center justify-start">
+    <span className="flex flex-col justify-start flex-grow ">
       <button
-        className={`rounded-full p-3 content-center justify-center ${
-          isPressed ? "bg-blue-500 text-white" : "bg-gray-300 text-gray-700"
+        className={` border-2 border-green-600 border-opacity-50 rounded-full p-3 content-center justify-center ${
+          isPressed ? "bg-green-600 text-white" : "bg-gray-900 text-gray-700"
         }`}
         onClick={onPress}
-      >
-        STAGE
-      </button>
+      ></button>
     </span>
   );
 };

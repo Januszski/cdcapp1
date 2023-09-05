@@ -235,6 +235,30 @@ const chatList = [
   "Давайте разорвем танцпол! 💃🎵",
   "Polska Górą 🇵🇱",
   "Lietuva viršuje 🇱🇹",
+  "žiauriai gera daina,todel jis ir yra geriausias Lietuvos dainyninkas💟",
+  "Thank you for beautiful music :-) Best wishes from Norway :-)",
+  "Nu nerealu!! Ačiū Egi!! Tu esi muzika!! woooooow!!🏆❤",
+  "As busiu londone ir lauksiu Egidijaus koncerto rugseji🎉🎉🎉😊as busiu o2 arenoj!!! Iki pasimatymo❤❤❤❤",
+  "Vienas iš geriausių šiuolaikinės muzikos atlikėjų.",
+  "Ačiūū tau, už nuostabia daina! :))",
+  "O Wau čia tai bent klausytis ir dar kartą klausytis norisi👍👍👍👍👍👍👍❤❤!Labai graži daina. SEL pirmyn tu pats geriausias🙏",
+  "Ritmas pasaka....na nebūtų Sel...mašinoj ir aplamai limpa visur belekaip",
+  "visai poh, galima klausyt, muzikai kazko truksta nera skambejimo :)",
+  "Negaliu atsiklausyt...🤗♥️",
+  "Pagaliau tiek laukiau ❤️❤️❤️",
+  "Kada SEL concertas Portugalijoi? Mes labai ateinam  :-)",
+  "Va čia tai gabaliukas 😍😍😍",
+  "super 🔊🔊🔊",
+  "laukiam, kada galesim nusipirkti bilietus i koncerta",
+  "viskas cia labai gerai. Super Egi. o kam nepatinka neklausykit ir nekomentuokit",
+  "Geriau uz visus radistus ir monikas :)))",
+  "Prievartauju replay mygtuką  ;DD",
+  "Spotify prasyciau",
+  "I hope Brooks has been laying off the fluoride",
+  "Somebody get a stool for Martin Garrix",
+  "Can't wait for Avoure - Aura",
+  "Skytech - Out Of My Mind",
+  "Gdy R3HAB remixuje kawałki polaka to znaczy, że polska scena EDM ma się świetnie :D",
 ];
 
 function getRandomInt(min: number, max: number) {
@@ -265,16 +289,12 @@ function ChatTest({
     const specificChats = [
       { user: "ANDy", chat: "  noise ON x8" },
       { user: "ANDy", chat: "_" },
-
       { user: "ANDy", chat: "  noise ON x8" },
       { user: "ANDy", chat: "_" },
-
       { user: "ANDy", chat: "  noise ON x8" },
       { user: "ANDy", chat: "_" },
-
       { user: "ANDy", chat: "  noise ON x8" },
       { user: "ANDy", chat: "_" },
-
       { user: "ANDy", chat: "  noise OFF" },
       { user: "ANDy", chat: "  noise ON" },
       { user: "ANDy", chat: "  noise ON" },
@@ -492,16 +512,23 @@ function ChatTest({
     ];
 
     const interval = setInterval(() => {
-      if (indexRef1.current < specificChats.length) {
+      if (indexRef1.current < 62) {
         addChat(
           specificChats[indexRef1.current].user,
           specificChats[indexRef1.current].chat
         );
+      } else if (indexRef1.current > 100 && indexRef1.current < 133) {
+        addChat(
+          specificChats[indexRef1.current - 39].user,
+          specificChats[indexRef1.current - 39].chat
+        );
+      }
 
+      if (indexRef1.current < 133) {
         indexRef1.current = indexRef1.current + 1;
         console.log("INDEX", indexRef1.current);
       }
-    }, 2000);
+    }, getRandomInt(2000, 5000));
 
     return () => clearInterval(interval);
   }, []);
@@ -521,7 +548,7 @@ function ChatTest({
       const selectedChat = chatList[getRandomInt(0, chatList.length)];
 
       addChat(selectedUser, selectedChat);
-    }, getRandomInt(1000, 20000));
+    }, getRandomInt(1500, 6000));
 
     return () => clearInterval(interval);
   }, []);
@@ -547,52 +574,66 @@ function ChatTest({
 
   return (
     <>
-      <div className="flex justify-center bg-green-600" style={{ width: 300 }}>
-        {" "}
-        Live Chat
-      </div>
       <div
-        style={{
-          overflowY: "scroll",
-          height: 400,
-          width: 300,
-          display: "flex",
-          flexDirection: "column",
-        }}
-        className="border-2 border-green-600 ambient-background-light"
+        className="padding-left: 1.25rem;
+padding-right: 1.25rem;"
       >
-        {chats.map((chat, index) => (
-          <span key={index}>
-            {chat.username === "MODERATOR" ? (
-              <span className="text-green-600"> MODERATOR 🔧</span>
-            ) : (
-              chat.username
-            )}
-            : {chat.chat}
-          </span>
-        ))}
-        <div ref={scrollRef}></div>
-      </div>
-      <div
-        className="border-2 border-green-600 ambient-background-light"
-        style={{ width: 300, borderTop: 0 }}
-      >
-        <SongInput
-          setText={setUserText}
-          buttonName={"Send"}
-          desc={"Send a chat message"}
-        />
-        <button
-          className={`rounded-full p-3 ${
-            buttonPressedAuto
-              ? "bg-green-600 text-white"
-              : "bg-green-300 text-gray-700"
-          }`}
-          onClick={onPress}
+        <div
+          className="flex justify-center bg-green-600"
+          style={{
+            width: "35vw",
+          }}
         >
           {" "}
-          Autoscroll Off{" "}
-        </button>
+          Live Chat
+        </div>
+        <div
+          style={{
+            overflowY: "scroll",
+            height: "65vh",
+            width: "35vw",
+            display: "flex",
+            flexDirection: "column",
+          }}
+          className="border-2 border-green-600 ambient-background-light"
+        >
+          {chats.map((chat, index) => (
+            <span key={index}>
+              {chat.username === "MODERATOR" ? (
+                <span className="text-green-600"> MODERATOR 🔧</span>
+              ) : (
+                <span className="font-semibold"> {chat.username}</span>
+              )}
+              : {chat.chat}
+            </span>
+          ))}
+          <div ref={scrollRef}></div>
+        </div>
+        <div
+          className="border-2 border-green-600 ambient-background-light justify-center"
+          style={{ width: "35vw", borderTop: 0 }}
+        >
+          <SongInput
+            setText={setUserText}
+            buttonName={"Send"}
+            desc={"Send a chat message"}
+            optionalButton={true}
+            onPress={onPress}
+          />
+          <div className=" justify-self-end self-end">
+            <button
+              className={`rounded-full p-3 ${
+                buttonPressedAuto
+                  ? "bg-green-600 text-white"
+                  : "bg-green-300 text-gray-700"
+              }`}
+              onClick={onPress}
+            >
+              {" "}
+              Autoscroll Off{" "}
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );
