@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-
+/* @ts-ignore */
 const StageButton = ({ onPress, isPressed }) => {
   return (
     <span className="flex flex-col justify-start flex-grow ">

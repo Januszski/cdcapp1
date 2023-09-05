@@ -17,7 +17,7 @@ export const MonitorChat = () => {
   >([]);
   const [savedInterval, saveInterval] = useState<NodeJS.Timer>();
 
-  // const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   const addChat = (username: string, chat: string) => {
     setActiveChats((oldChats) => [...oldChats, { username, chat }]);
@@ -34,10 +34,11 @@ export const MonitorChat = () => {
   // };
 
   useEffect(() => {
+    /* @ts-ignore */
     clearInterval(savedInterval);
 
     const interval = setInterval(() => {
-      const selectedUser = usernames[getRandomInt(0, usernames.length)];
+      const selectedUser = usernames[getRandomInt(0, usernames.length - 1)];
       const selectedChat = chats[getRandomInt(0, chats.length)];
 
       addChat(selectedUser, selectedChat);
@@ -100,6 +101,7 @@ export const MonitorChat = () => {
           </p>
         </>
       ))}
+      <div ref={ref}> aaaaaa </div>
     </div>
     // </Box>
   );

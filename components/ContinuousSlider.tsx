@@ -4,7 +4,8 @@ import Stack from "@mui/material/Stack";
 import Slider from "@mui/material/Slider";
 import VolumeDown from "@mui/icons-material/VolumeDown";
 import VolumeUp from "@mui/icons-material/VolumeUp";
-
+// @ts-nocheck
+/* @ts-ignore */
 export default function ContinuousSlider({ setSlider, sliderVal }) {
   // const [valueSlider, setValueSlider] = React.useState<number>(30);
 

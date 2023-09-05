@@ -10,17 +10,29 @@ import { TextField } from "@mui/material";
 import SongInput from "./SongInput";
 
 const ControlPanel = ({
+  /* @ts-ignore */
   lightNone,
+  /* @ts-ignore */
   light1,
+  /* @ts-ignore */
   light2,
+  /* @ts-ignore */
   lightBoth,
+  /* @ts-ignore */
   b1Pressed,
+  /* @ts-ignore */
   b2Pressed,
+  /* @ts-ignore */
   setText,
+  /* @ts-ignore */
   setSlider,
+  /* @ts-ignore */
   sliderVal,
+  /* @ts-ignore */
   setStrobe,
+  /* @ts-ignore */
   b3Pressed,
+  /* @ts-ignore */
   isDisabled,
 }) => {
   return (
@@ -79,6 +91,8 @@ const ControlPanel = ({
           setText={setText}
           buttonName={"Apply"}
           desc={"Update Stage Text"}
+          optionalButton={false}
+          onPress={false}
         />
       </div>
       <div className="">

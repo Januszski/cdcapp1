@@ -10,10 +10,10 @@ import TextField from "@mui/material/TextField";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-
+/* @ts-ignore */
 const SongInput = ({ setText, buttonName, desc, optionalButton, onPress }) => {
   const [inputValue, setInputValue] = useState("");
-
+  /* @ts-ignore */
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };

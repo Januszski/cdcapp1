@@ -18,13 +18,21 @@ const press = Press_Start_2P({
 });
 
 const StagePage = ({
+  /* @ts-ignore */
   currentStage,
+  /* @ts-ignore */
   setCurrentStage,
+  /* @ts-ignore */
   stageText,
+  /* @ts-ignore */
   setStageText,
+  /* @ts-ignore */
   disabled,
+  /* @ts-ignore */
   setDisabled,
+  /* @ts-ignore */
   sliderVal,
+  /* @ts-ignore */
   setSliderVal,
 }) => {
   //const [currentStage, setCurrentStage] = useState("lightNone");

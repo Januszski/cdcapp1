@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-
+/* @ts-ignore */
 const MonitorButton = ({ onPress, isPressed }) => {
   // const [activeButton, setActiveButton] = useState(1);
 

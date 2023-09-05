@@ -266,14 +266,29 @@ function getRandomInt(min: number, max: number) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
 }
+/* @ts-ignore */
 
 function ChatTest({
+  /* @ts-ignore */
+
   chats,
+  /* @ts-ignore */
+
   setChats,
+  /* @ts-ignore */
+
   userText,
+  /* @ts-ignore */
+
   setUserText,
+  /* @ts-ignore */
+
   buttonPressedAuto,
+  /* @ts-ignore */
+
   setButtonPressedAuto,
+  /* @ts-ignore */
+
   indexRef1,
 }) {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -302,6 +317,7 @@ function ChatTest({
       { user: "ANDy", chat: "  noise ON" },
       { user: "ANDy", chat: "  noise OFF" },
       { user: "ANDy", chat: "  noise ON" },
+      { user: "ANDy", chat: "  noise OFF" },
       { user: "ANDy", chat: "_" },
       { user: "ANDy", chat: "  noise OFF" },
       { user: "ANDy", chat: "  noise OFF" },
@@ -534,6 +550,8 @@ function ChatTest({
   }, []);
 
   const addChat = (username: string, chat: string) => {
+    /* @ts-ignore */
+
     setChats((oldChats) => [...oldChats, { username, chat }]);
     console.log("CHAT ADDED");
   };
@@ -597,6 +615,8 @@ padding-right: 1.25rem;"
           }}
           className="border-2 border-green-600 ambient-background-light"
         >
+          {/* @ts-ignore */}
+
           {chats.map((chat, index) => (
             <span key={index}>
               {chat.username === "MODERATOR" ? (

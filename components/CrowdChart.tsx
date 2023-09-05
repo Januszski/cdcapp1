@@ -4,7 +4,7 @@ import HighchartsReact from "highcharts";
 
 const generateRandomDataPoint = () => Math.random() * 100; // Function to generate random data point
 
-const TimeSeriesChart = () => {
+const CrowdChart = () => {
   const [data, setData] = useState([]);
   const [counter, setCounter] = useState(0);
   /* @ts-ignore */
@@ -12,6 +12,7 @@ const TimeSeriesChart = () => {
   useEffect(() => {
     // Function to update data every second
     const updateData = () => {
+      /* @ts-ignore */
       setData((prevData) => [
         ...prevData.slice(1), // Remove the first data point
         generateRandomDataPoint(), // Add a new random data point
@@ -53,9 +54,10 @@ const TimeSeriesChart = () => {
 
   return (
     <div>
+      {/* @ts-ignore */}
       <HighchartsReact highcharts={Highcharts} options={config} />
     </div>
   );
 };
 
-export default TimeSeriesChart;
+export default CrowdChart;

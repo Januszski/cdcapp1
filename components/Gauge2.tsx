@@ -6,7 +6,7 @@ import HighchartsSolidGauge from "highcharts/modules/solid-gauge";
 // Initialize Highcharts modules
 HighchartsMore(Highcharts);
 HighchartsSolidGauge(Highcharts);
-
+/* @ts-ignore */
 const SolidGaugeChart2 = ({ value }) => {
   const chartRef = useRef(null);
 
@@ -72,9 +72,12 @@ const SolidGaugeChart2 = ({ value }) => {
     };
     /* @ts-ignore */
     if (!chartRef.current) {
+      /* @ts-ignore */
       chartRef.current = Highcharts.chart("2", chartOptions);
     } else {
+      /* @ts-ignore */
       chartRef.current?.series[0].setData([value], true);
+      /* @ts-ignore */
       chartRef.current.series[0].update({
         dataLabels: {
           format:
