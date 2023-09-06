@@ -301,7 +301,7 @@ function ChatTest({
   //      indexRef.current = (indexRef.current + 1) % gaugeArrNoise.length;
 
   useEffect(() => {
-    const specificChats = [
+    const andyChats = [
       { user: "ANDy", chat: "  noise ON x8" },
       { user: "ANDy", chat: "_" },
       { user: "ANDy", chat: "  noise ON x8" },
@@ -365,7 +365,8 @@ function ChatTest({
       { user: "ANDy", chat: "  noise ON" },
       { user: "ANDy", chat: "_" },
       { user: "ANDy", chat: "  noise ON x8" },
-
+    ];
+    const quixoteChats = [
       {
         user: "Don Quixote 312",
         chat: "La virtud es más perseguida por los malvados que amada por los buenos. 2YgMjYgbnVtYmVycw==",
@@ -527,25 +528,30 @@ function ChatTest({
       },
     ];
 
+    const waitLength = andyChats.length + 50;
+
     const interval = setInterval(() => {
-      if (indexRef1.current < 62) {
+      if (indexRef1.current < andyChats.length) {
         addChat(
-          specificChats[indexRef1.current].user,
-          specificChats[indexRef1.current].chat
+          andyChats[indexRef1.current].user,
+          andyChats[indexRef1.current].chat
         );
-      } else if (indexRef1.current > 100 && indexRef1.current < 133) {
+      } else if (
+        indexRef1.current >= waitLength &&
+        indexRef1.current < waitLength + quixoteChats.length
+      ) {
         addChat(
-          specificChats[indexRef1.current - 39].user,
-          specificChats[indexRef1.current - 39].chat
+          quixoteChats[indexRef1.current - waitLength].user,
+          quixoteChats[indexRef1.current - waitLength].chat
         );
       }
 
-      if (indexRef1.current < 133) {
+      if (indexRef1.current < waitLength + quixoteChats.length) {
         indexRef1.current = indexRef1.current + 1;
         console.log("INDEX", indexRef1.current);
       }
     }, getRandomInt(2000, 5000));
-
+    //
     return () => clearInterval(interval);
   }, []);
 

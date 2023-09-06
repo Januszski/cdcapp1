@@ -1,16 +1,18 @@
 import React, { useEffect, useRef } from "react";
 import Highcharts from "highcharts";
-/* @ts-ignore */
-
 import HighchartsMore from "highcharts/highcharts-more";
-/* @ts-ignore */
-
 import HighchartsSolidGauge from "highcharts/modules/solid-gauge";
+import solidGauge from "highcharts/modules/solid-gauge";
+import highchartsMore from "highcharts/highcharts-more";
+import HighchartsExporting from "highcharts/modules/exporting";
 
 // Initialize Highcharts modules
-HighchartsMore(Highcharts);
-HighchartsSolidGauge(Highcharts);
-/* @ts-ignore */
+if (typeof Highcharts === "object") {
+  HighchartsExporting(Highcharts);
+  highchartsMore(Highcharts);
+  solidGauge(Highcharts);
+}
+
 const SolidGaugeChart = ({ value }) => {
   const chartRef = useRef(null);
 
@@ -77,11 +79,10 @@ const SolidGaugeChart = ({ value }) => {
     /* @ts-ignore */
     if (!chartRef.current) {
       /* @ts-ignore */
+
       chartRef.current = Highcharts.chart("solidGaugeContainer", chartOptions);
     } else {
-      /* @ts-ignore */
       chartRef.current.series[0].setData([value], true);
-      /* @ts-ignore */
       chartRef.current.series[0].update({
         dataLabels: {
           format:

@@ -3,6 +3,7 @@ import { MonitorChat } from "./MonitorChat";
 import ChatTest from "./Chat";
 import Gauge from "./Gauge";
 import Gauge2 from "./Gauge2";
+import LiveGraph from "./LiveData";
 
 const MonitorPage = ({
   /* @ts-ignore */
@@ -324,6 +325,7 @@ const MonitorPage = ({
         >
           <Gauge value={gaugeVal} />
           <Gauge2 value={gaugeVal2} />
+          {/* <LiveGraph /> */}
         </div>
       </div>
     </>
