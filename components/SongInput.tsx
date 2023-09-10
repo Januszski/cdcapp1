@@ -10,6 +10,14 @@ import TextField from "@mui/material/TextField";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import Vals from "../util/vals";
+import Double from "../util/double";
+import Undouble from "../util/undouble";
+import de from "../util/de";
+import en from "../util/en";
+
+import { XCaesar } from "xcaesar";
+
 /* @ts-ignore */
 const SongInput = ({ setText, buttonName, desc, optionalButton, onPress }) => {
   const [inputValue, setInputValue] = useState("");
@@ -18,49 +26,18 @@ const SongInput = ({ setText, buttonName, desc, optionalButton, onPress }) => {
     setInputValue(event.target.value);
   };
 
-  const specialInputs = [
-    {
-      flag: "cdc{TypeONegative}",
-      vals: [
-        "IT WAS A GOOD DAY ISE CUBE",
-        "ITWASAGOODDAYISECUBE",
-        "IT WAS A GOOD DAY BY ISE CUBE",
-        "ITWASAGOODDAYBYISECUBE",
-        "IT WAS A GOOD DAY - ISE CUBE",
-        "IT WAS A GOOD DAY BY ISECUBE",
-        "IT WAS A GOOD DAY ISECUBE",
-        "IT WAS A GOOD DAY - ISECUBE",
-        "IT WAS A GOOD DAY-ISECUBE",
-        "IT WAS A GOOD DAY-ISE CUBE",
-        "ISE CUBE IT WAS A GOOD DAY",
-        "ISE CUBE - IT WAS A GOOD DAY",
-        "ISECUBE IT WAS A GOOD DAY",
-        "ISECUBE - IT WAS A GOOD DAY",
-        "ISECUBE-IT WAS A GOOD DAY",
-        "ISE CUBE-IT WAS A GOOD DAY",
-      ],
-    },
-    {
-      flag: "cdc{MtnDewwwwwwwwwwwwwwwww}",
-      vals: [
-        "COLD AS ISE FOREIGNER",
-        "COLD AS ISE BY FOREIGNER",
-        "COLD AS ISE - FOREIGNER",
-        "COLDASISEFOREIGNER",
-        "COLDASISEBYFOREIGNER",
-        "FOREIGNER - COLD AS ISE",
-        "FOREIGNER COLD AS ISE",
-        "COLD AS ISE-FOREIGNER",
-        "FOREIGNER-COLD AS ISE",
-      ],
-    },
-  ];
+  console.log("ENCRYPTED", en());
+  console.log("DECRYPTED", de(en()));
 
+  console.log("TRUE 64", btoa("cdc{MtnDewwwwwwwwwww"));
+  console.log("DEC TEST", atob("Y2Rje010bkRld3d3d3d3d3d3d3d" + "d3d3d3d9"));
+
+  const specialInputs = Vals;
+  let a = 0;
   const handleClick = () => {
     for (const i of specialInputs) {
+      a++;
       for (const v of i.vals) {
-        console.log("V", v);
-        console.log("INPIT", inputValue.toUpperCase);
         if (inputValue.toUpperCase() === v) {
           setText(i.flag);
           return;
