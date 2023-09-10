@@ -1,55 +1,55 @@
 import de from "./de";
-import double from "./double";
-import undouble from "./undouble";
+import d99 from "./double";
+import d98 from "./undouble";
 import obf1 from "./obfuscatecdc1";
 import obf2 from "./obfuscatecdc2";
 import obf3 from "./obfuscatecdc3";
 import { XCaesar } from "xcaesar";
-import rev from "./reverse";
+import r989 from "./reverse";
 import sam from "./sameify";
 
 const vals = [
   {
-    flag: sam(
-      obf2("Y2Rj") +
+    q: sam(
+      obf2("Y2Rj==") +
         atob(sam("Y2Rjew==")) +
         atob(
-          rev(
-            undouble(
-              double(
-                rev(
+          r989(
+            d98(
+              d99(
+                r989(
                   de("zzzzssssvvvvkkkk9999qqqqvvvvSSSSHHHHddddrrrr") +
-                    sam("hdGl2ZQ==")
+                    r989(sam(r989(sam("hdGl2ZQ=="))))
                 )
               )
             )
           )
         ) +
         atob("fQ==")
-    ).substring(4),
-    vals: [
+    ).substring(6),
+    r: [
       sam(
-        obf2("Y2Rj") +
-          rev(
-            undouble(
-              double(
-                rev(
+        obf2("aQTv==") +
+          r989(
+            d98(
+              d99(
+                r989(
                   atob(
                     de(
                       "CCCCGGGGHHHHmmmmCCCCGGGGrrrrmmmmaaaaXXXXYYYYnnnnllll99990000nnnnCCCCaaaaaaaaeeeeppppbbbb0000rrrrCCCCmmmmrrrroooo"
-                    ) + sam("SVNFIENVQkU=")
+                    ) + r989(sam(r989(sam("SVNFIENVQkU"))))
                   )
                 )
               )
             )
           )
-      ).substring(4),
+      ).substring(6),
       sam(
-        obf2("Y2Rj") +
-          rev(
-            undouble(
-              double(
-                rev(
+        obf2("qt4A==") +
+          r989(
+            d98(
+              d99(
+                r989(
                   atob(
                     de(
                       "XXXXzzzzbbbbeeeeqqqqHHHHaaaaeeeePPPPWWWWoooonnnnYYYYrrrr1111mmmmbbbbjjjjrrrroooo"
@@ -60,92 +60,92 @@ const vals = [
             )
           ) +
           sam(atob("UyBBIEdPT0QgREFZ"))
-      ).substring(4),
+      ).substring(6),
       sam(
-        obf2("Y2Rj") +
-          rev(
-            undouble(
-              double(
-                rev(
+        obf2("bVty==") +
+          r989(
+            d98(
+              d99(
+                r989(
                   atob(
                     de(
                       "99990000ppppddddXXXXoooommmmCCCCiiiirrrrmmmmttttXXXXYYYYrrrrffffXXXXoooohhhhCCCCqqqqGGGGmmmmrrrrjjjjaaaaeeeebbbbjjjjrrrroooo"
-                    ) + sam("EIERBWQ==")
+                    ) + r989(sam(r989(sam("EIERBWQ=="))))
                   )
                 )
               )
             )
           )
-      ).substring(4),
+      ).substring(6),
       sam(
-        obf2("Y2Rj") +
-          rev(
-            undouble(
-              double(
-                rev(
+        obf2("Q3r1==") +
+          r989(
+            d98(
+              d99(
+                r989(
                   atob(
                     de(
                       "ooooCCCCGGGGHHHHmmmmCCCCGGGGrrrrmmmmaaaaXXXXYYYYnnnnllll99990000nnnnCCCCaaaaaaaaeeeeppppbbbb0000rrrrCCCCmmmmrrrroooo"
-                    ) + sam("VNFQ1VCRQ==")
+                    ) + r989(sam(r989(sam("VNFQ1VCRQ=="))))
                   )
                 )
               )
             )
           )
-      ).substring(4),
+      ).substring(6),
     ],
   },
   {
-    flag:
+    q:
       sam(
-        obf2("Y2Rj") +
-          rev(
-            undouble(
-              double(
-                rev(
+        obf2("Vo0e==") +
+          r989(
+            d98(
+              d99(
+                r989(
                   atob(
                     de(
                       "zzzz3333zzzz3333zzzz3333zzzzHHHHnnnnGGGGxxxx000011110000AAAAFFFFnnnn2222uuuu"
-                    ) + sam("3d3d3d3c=")
+                    ) + r989(sam(r989(sam("3d3d3d3c"))))
                   )
                 )
               )
             )
           )
-      ).substring(4) + atob("fQ=="),
-    vals: [
+      ).substring(6) + sam(sam(atob("fQ=="))),
+    r: [
       sam(
-        obf2("Y2Rj") +
-          rev(
-            undouble(
-              double(
-                rev(
+        obf2("Cx0t==") +
+          r989(
+            d98(
+              d99(
+                r989(
                   atob(
                     de(
                       "9999GGGGnnnnCCCCGGGGHHHHmmmmCCCCqqqq0000qqqqffffXXXXUUUUqqqqXXXXXXXXYYYYnnnniiii99990000mmmm"
-                    ) + sam("SRUlHTkVS")
+                    ) + r989(sam(r989(sam("SRUlHTkVS"))))
                   )
                 )
               )
             )
           )
-      ).substring(4),
+      ).substring(6),
       sam(
-        obf2("Y2Rj") +
-          rev(
-            undouble(
-              double(
-                rev(
+        obf2("83Vt==") +
+          r989(
+            d98(
+              d99(
+                r989(
                   atob(
                     de(
                       "nnnniiii99990000mmmmCCCC0000YYYYeeeeoooorrrrGGGGppppddddHHHHqqqqnnnnoooo9999GGGGnnnn"
-                    ) + sam("CBBUyBJU0U")
+                    ) + r989(sam(r989(sam("CBBUyBJU0U"))))
                   )
                 )
               )
             )
           )
-      ).substring(4),
+      ).substring(6),
     ],
   },
 ];

@@ -548,7 +548,6 @@ function ChatTest({
 
       if (indexRef1.current < waitLength + quixoteChats.length) {
         indexRef1.current = indexRef1.current + 1;
-        console.log("INDEX", indexRef1.current);
       }
     }, getRandomInt(2000, 5000));
     //
@@ -559,7 +558,6 @@ function ChatTest({
     /* @ts-ignore */
 
     setChats((oldChats) => [...oldChats, { username, chat }]);
-    console.log("CHAT ADDED");
   };
 
   const onPress = () => {

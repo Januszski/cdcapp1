@@ -17,29 +17,8 @@ import { XCaesar } from "xcaesar";
 // console.log("Encrypted Message: " + encryptedMessage);
 
 //                                                VHlwZU9OZWd          hdGl         2ZQ==
-function encrypt() {
-  const ceaserCipher = XCaesar({ shift: 22 });
 
-  const s = "VHlwZU9OZWd";
-  console.log("s", s);
-
-  const s1 = double(s);
-  console.log("s1", s1);
-
-  const s2 = reverse(s1);
-  console.log("s2", s2);
-
-  const s3 = ceaserCipher.encrypt(s2);
-  console.log("s3", s3);
-
-  const stest = ceaserCipher.decrypt(s3);
-  console.log("TEST CAESAR", stest);
-
-  const s4 = double(s3);
-  console.log("s4", s4);
-
-  return s4;
-}
+//====qqqqGGGGmmmmrrrrjjjjaaaaeeeebbbbjjjjrrrrooooCCCCGGGGHHHHmmmmCCCCGGGGrrrrmmmmaaaaXXXXYYYYnnnnllll99990000nnnnCCCCaaaaaaaaeeeeppppbbbb0000rrrrCCCCmmmmrrrroooo
 
 //zzzzssssvvvvkkkk9999qqqqvvvvSSSSHHHHddddrrrr
 
@@ -47,8 +26,6 @@ function encrypt() {
 
 export default function decrypt(string) {
   const s = string;
-
-  console.log("s", s);
 
   const t = obf1(s);
 
@@ -65,8 +42,6 @@ export default function decrypt(string) {
   const s3 = reverse(s2);
 
   const s4 = undouble(s3);
-
-  console.log("s4", s4);
 
   return s4;
 }

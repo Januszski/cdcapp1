@@ -21,7 +21,6 @@ export const MonitorChat = () => {
 
   const addChat = (username: string, chat: string) => {
     setActiveChats((oldChats) => [...oldChats, { username, chat }]);
-    console.log("CHAT ADDED");
 
     //window.scrollTo(0, document.body.scrollHeight);
   };
@@ -49,8 +48,6 @@ export const MonitorChat = () => {
 
   useEffect(() => {
     if (activeChats.length) {
-      console.log("THIS PRINTS");
-      console.log(ref.current);
       ref.current?.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
